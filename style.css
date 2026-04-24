@@ -1,0 +1,427 @@
+:root {
+    --bg-dark: #05070a;
+    --accent-blue: #00d2ff;
+    --accent-purple: #9d50bb;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.case-study-theme {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Feature Navigation */
+.feature-nav {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 10px 30px;
+    border-radius: 100px;
+    border: 1px solid var(--glass-border);
+    display: flex;
+    gap: 30px;
+}
+
+.feature-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.feature-nav a:hover {
+    color: var(--accent-blue);
+}
+
+/* Hero Section */
+.case-hero {
+    height: 90vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4) saturate(1.2);
+    transform: scale(1.1);
+    animation: zoom-out 20s linear infinite;
+}
+
+@keyframes zoom-out {
+    from { transform: scale(1.1); }
+    to { transform: scale(1); }
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 40px;
+}
+
+.badge {
+    color: var(--accent-blue);
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #fff 0%, #00d2ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.case-desc {
+    font-size: 20px;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.case-desc strong {
+    color: var(--accent-blue);
+}
+
+/* Chapter Structure */
+.case-chapter {
+    padding: 15vw 10vw;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.case-chapter.alternate {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.chapter-num {
+    position: absolute;
+    top: 50px;
+    left: 10vw;
+    font-family: 'Outfit', sans-serif;
+    font-size: 150px;
+    font-weight: 900;
+    opacity: 0.03;
+    line-height: 1;
+}
+
+.chapter-title {
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.chapter-title h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.chapter-title p {
+    color: var(--text-secondary);
+    font-size: 18px;
+}
+
+/* Feature 1: Research Visuals */
+.glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 60px;
+}
+
+.need-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.need-card {
+    text-align: center;
+}
+
+.need-card .icon {
+    font-size: 40px;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+}
+
+.need-card h3 {
+    margin-bottom: 15px;
+}
+
+.need-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.need-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(157, 80, 187, 0.2);
+    color: var(--accent-purple);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.research-quote {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    text-align: center;
+    font-style: italic;
+    color: var(--accent-blue);
+    border-top: 1px solid var(--glass-border);
+    padding-top: 40px;
+}
+
+/* Feature 2: Strategy */
+.persona-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.persona-item {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 30px !important;
+}
+
+.p-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-blue);
+}
+
+.p-tag {
+    color: var(--accent-blue);
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.flow-presentation {
+    text-align: center;
+}
+
+.flow-presentation h3 {
+    margin-bottom: 40px;
+}
+
+.flow-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.f-step {
+    padding: 15px 30px;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.f-step.active {
+    background: var(--accent-blue);
+    color: black;
+    border-color: var(--accent-blue);
+}
+
+/* Feature 3: Figma Showcase */
+.figma-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.figma-browser {
+    width: 100%;
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+}
+
+.b-header {
+    background: #222;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.dots { display: flex; gap: 8px; }
+.dots span { width: 10px; height: 10px; border-radius: 50%; background: #444; }
+.url { font-size: 12px; color: #666; font-family: monospace; }
+
+.b-content img {
+    width: 100%;
+    filter: grayscale(0.5);
+    transition: var(--transition);
+}
+
+.b-content:hover img {
+    filter: grayscale(0);
+}
+
+.figma-details ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.figma-details li {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.figma-details li strong {
+    display: block;
+    color: var(--accent-blue);
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+/* Feature 4: Process Timeline */
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.step {
+    text-align: center;
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--accent-purple);
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.step h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Footer Card */
+.case-footer {
+    padding: 10vw;
+    text-align: center;
+}
+
+.footer-card h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.footer-card p {
+    margin-bottom: 40px;
+    color: var(--text-secondary);
+}
+
+.footer-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.primary-btn {
+    background: var(--accent-blue);
+    color: black;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 100px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.primary-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.4);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--glass-border);
+    padding: 15px 40px;
+    border-radius: 100px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+    .need-grid, .persona-showcase, .figma-details ul, .process-timeline {
+        grid-template-columns: 1fr;
+    }
+}
